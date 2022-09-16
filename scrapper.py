@@ -27,7 +27,7 @@ chrome_options.add_argument("--headless")
 
 driver = webdriver.Chrome(
     chrome_options=chrome_options,
-    executable_path="/Users/taeholee/Documents/Selnium/Ex_Files_Python_Automation_Testing_Upd/Exercise Files/CH01/01_02/chromedriver")
+    executable_path="resource/chromedriver")
 driver.get("https://talkbot.us/#/login")
 driver.implicitly_wait(10)
 
