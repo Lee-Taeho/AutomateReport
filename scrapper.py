@@ -10,18 +10,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 import time
 import os
 
-def highlight(element, effect_time, color, border):
-    driver = element._parent
-
-    def apply_style(s):
-        driver.execute_script("arguments[0].setAttribute('style', arguments[1]);",
-                              element, s)
-
-    original_style = element.get_attribute('style')
-    apply_style("border: {0}px solid {1};".format(border, color))
-    time.sleep(effect_time)
-    apply_style(original_style)
-
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
@@ -49,14 +37,14 @@ login.click()
 
 
 # Finding Arelli
-# folder = driver.find_element(By.XPATH, '//div[@class="treeList"]//label[@title="Arelli"]/../../../*[@class = "fa font-tree-item fa-folder"]')
-# folder.click()
-# Project = driver.find_element(By.XPATH, '//*[@class = "treeList"]//span[text()="Astro"]')
-# Project.click()
+folder = driver.find_element(By.XPATH, '//div[@class="treeList"]//label[@title="Arelli"]/../../../*[@class = "fa font-tree-item fa-folder"]')
+folder.click()
+Project = driver.find_element(By.XPATH, '//*[@class = "treeList"]//span[text()="Astro"]')
+Project.click()
 
 # Finding NavienMate
-folder = driver.find_element(By.XPATH, '//div[@class="treeList"]//label[@title="NavienMate"]')
-folder.click()
+# folder = driver.find_element(By.XPATH, '//div[@class="treeList"]//label[@title="NavienMate"]')
+# folder.click()
 
 driver.implicitly_wait(10)
 
@@ -102,10 +90,10 @@ def select_date(start_or_end, tab, date):
 
 
 # starting date
-select_date(0, "Overall",["2022", "09", "01"])
+select_date(0, "Overall",["2022", "10", "01"])
 
 # ending date
-select_date(1, "Overall",["2022", "09", "30"])
+select_date(1, "Overall",["2022", "10", "31"])
 
 driver.find_element(By.XPATH, "//div[@class= 'bi-filter-cont']//button").click()
 
@@ -164,8 +152,8 @@ email_tab = tab.find_element(By.XPATH, './a[text() = "Emails"]')
 email_tab.click()
 
 # Select dates
-select_date(0, "Email", ["2022", "09", "01"])
-select_date(1, "Email", ["2022", "09", "30"])
+select_date(0, "Email", ["2022", "10", "01"])
+select_date(1, "Email", ["2022", "10", "31"])
 
 driver.find_elements(By.XPATH, "//div[@class= 'bi-filter-cont']//button")[6].click()
 

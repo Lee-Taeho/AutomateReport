@@ -7,9 +7,9 @@ from pptx.dml.color import RGBColor
 import pandas as pd
 
 year = 2022
-month = 9
-# bot_name = "Astro"
-bot_name = "Nate & Maven"
+month = 10
+bot_name = "Astro"
+# bot_name = "Nate & Maven"
 month_to_name = {
     1: "Jan", 2: "Feb", 3: "Mar",
     4: "Apr", 5: "May", 6: "Jun",
